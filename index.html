@@ -658,6 +658,18 @@
   const worksPage  = document.getElementById('works-page');
   const header     = document.getElementById('header');
 
+  window.addEventListener('popstate', (e) => {
+  if (e.state?.page === 'detail') {
+    closeDetail();
+    worksPage.classList.add('open');
+    window._worksOpen = true;
+  } else if (e.state?.page === 'works') {
+    closeWorks();
+  } else {
+    closeDetail();
+    closeWorks();
+  }
+});
   function isVideo(src) {
     return /\.(mp4|webm|mov)$/i.test(src);
   }
@@ -1331,18 +1343,7 @@
     detailPage.classList.remove('open');
     document.body.style.overflow = '';
   }
-window.addEventListener('popstate', (e) => {
-  if (e.state?.page === 'detail') {
-    closeDetail();
-    worksPage.classList.add('open');
-    window._worksOpen = true;
-  } else if (e.state?.page === 'works') {
-    closeWorks();
-  } else {
-    closeDetail();
-    closeWorks();
-  }
-});
+
 
   document.getElementById('detail-back').addEventListener('click', closeDetail);
   document.getElementById('detail-logo-link').addEventListener('click', e => {
