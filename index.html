@@ -660,14 +660,20 @@
 
   window.addEventListener('popstate', (e) => {
   if (e.state?.page === 'detail') {
-    closeDetail();
+    detailPage.classList.remove('open');
+    document.body.style.overflow = '';
     worksPage.classList.add('open');
     window._worksOpen = true;
   } else if (e.state?.page === 'works') {
-    closeWorks();
+    detailPage.classList.remove('open');
+    document.body.style.overflow = '';
+    worksPage.classList.remove('open');
+    window._worksOpen = false;
   } else {
-    closeDetail();
-    closeWorks();
+    detailPage.classList.remove('open');
+    worksPage.classList.remove('open');
+    document.body.style.overflow = '';
+    window._worksOpen = false;
   }
 });
   function isVideo(src) {
