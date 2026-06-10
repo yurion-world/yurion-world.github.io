@@ -541,7 +541,7 @@
 
 <!-- Hero Landing -->
 <div id="hero-landing">
-  <img id="hero-img" src="Background.png" alt="Landing" />
+  <img id="hero-img" src="background.jpg" alt="Landing" />
   <div id="hero-scroll-hint">
     <div class="scroll-line"></div>
     <span>Scroll</span>
@@ -1158,7 +1158,7 @@
   credits: '',
   rows: [
     { layout: 'full', items: [
-      { src: 'works/youtube/detail/셀트리온/셀트리온.mp4', type: 'video' }
+      { src: 'https://www.youtube.com/embed/wWQgcIRzWAM', type: 'youtube' }
     ]},
   ]
   },
@@ -1243,7 +1243,15 @@
       const cell = document.createElement('div');
       cell.className = 'dg-item';
       let media;
-      if (item.type === 'video' || isVideo(item.src)) {
+      if (item.type === 'youtube') {
+  media = document.createElement('iframe');
+  media.src = item.src;
+  media.allowFullscreen = true;
+  media.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+  media.style.width = '100%';
+  media.style.aspectRatio = '16/9';
+  media.style.border = 'none';
+} else if (item.type === 'video' || isVideo(item.src)) {
         media = document.createElement('video');
         media.src = item.src;
         media.loop = true;
