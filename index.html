@@ -1218,6 +1218,7 @@
   function openDetail(detailKey) {
     const d = DETAILS[detailKey];
     if (!d) return;
+    history.pushState({ page: 'detail', detailKey }, '', '#' + detailKey);
     const key = detailKey;
     document.getElementById('detail-title').innerHTML = d.title;
     document.getElementById('detail-year').textContent = d.year;
@@ -1330,6 +1331,18 @@
     detailPage.classList.remove('open');
     document.body.style.overflow = '';
   }
+window.addEventListener('popstate', (e) => {
+  if (e.state?.page === 'detail') {
+    closeDetail();
+    worksPage.classList.add('open');
+    window._worksOpen = true;
+  } else if (e.state?.page === 'works') {
+    closeWorks();
+  } else {
+    closeDetail();
+    closeWorks();
+  }
+});
 
   document.getElementById('detail-back').addEventListener('click', closeDetail);
   document.getElementById('detail-logo-link').addEventListener('click', e => {
@@ -1346,6 +1359,7 @@
     worksPage.classList.add('open');
     document.body.style.overflow = 'hidden';
     window._worksOpen = true;
+    history.pushState({ page: 'works' }, '', '#works');
   });
   function closeWorks() {
     worksPage.classList.remove('open');
@@ -1385,6 +1399,7 @@
     worksPage.classList.add('open');
     document.body.style.overflow = 'hidden';
     window._worksOpen = true;
+    history.pushState({ page: 'works' }, '', '#works');
   });
 
   // ── Custom Cursor ──
