@@ -667,8 +667,9 @@
   } else if (e.state?.page === 'works') {
     detailPage.classList.remove('open');
     document.body.style.overflow = '';
-    worksPage.classList.remove('open');
-    window._worksOpen = false;
+    worksPage.classList.add('open');
+    window._worksOpen = true;
+    if (e.state.cat) filterWorks(e.state.cat);
   } else {
     detailPage.classList.remove('open');
     worksPage.classList.remove('open');
@@ -740,6 +741,9 @@
       t.classList.toggle('active', t.dataset.cat === cat)
     );
     buildGallery();
+     if (window._worksOpen) {
+    history.pushState({ page: 'works', cat }, '', '#works-' + cat);
+  }
   }
 
   document.querySelectorAll('.works-tab').forEach(btn =>
