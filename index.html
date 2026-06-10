@@ -1348,18 +1348,18 @@
   });
 
   function closeDetail() {
-    detailPage.classList.remove('open');
-    document.body.style.overflow = '';
-  }
-
-
-  document.getElementById('detail-back').addEventListener('click', closeDetail);
-  document.getElementById('detail-logo-link').addEventListener('click', e => {
-    e.preventDefault();
-    closeDetail();
-    closeWorks();
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+  detailPage.querySelectorAll('video').forEach(v => {
+    v.pause();
+    v.src = '';
   });
+  detailPage.querySelectorAll('iframe').forEach(f => {
+    f.src = '';
+  });
+  detailPage.classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+document.getElementById('detail-back').addEventListener('click', closeDetail);
 
   // ── Works 오픈 / 클로즈 ──
   document.getElementById('works-btn').addEventListener('click', e => {
