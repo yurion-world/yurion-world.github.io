@@ -752,6 +752,7 @@
       t.classList.toggle('active', t.dataset.cat === cat)
     );
     buildGallery();
+      document.querySelector('.works-gallery').scrollTop = 0;
      if (window._worksOpen) {
     history.pushState({ page: 'works', cat }, '', '#works-' + cat);
   }
