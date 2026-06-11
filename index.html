@@ -527,6 +527,45 @@
     ::-webkit-scrollbar { width: 3px; }
     ::-webkit-scrollbar-track { background: transparent; }
     ::-webkit-scrollbar-thumb { background: var(--muted); border-radius: 2px; }
+    @media (max-width: 768px) {
+  #works-page.open {
+    flex-direction: column;
+    height: 100dvh;
+  }
+  .works-sidebar {
+    width: 100%;
+    min-width: unset;
+    height: auto;
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+    padding: 20px 0;
+    flex-direction: row;
+    align-items: center;
+  }
+  .works-sidebar-top {
+    margin-bottom: 0;
+    padding: 0 20px;
+  }
+  .works-nav {
+    flex-direction: row;
+    padding: 0 20px;
+    gap: 8px;
+    overflow-x: auto;
+  }
+  .works-tab {
+    font-size: 16px;
+    border: none;
+    border-bottom: 2px solid transparent;
+    padding: 8px 0;
+    white-space: nowrap;
+  }
+  .works-tab.active {
+    border-bottom: 2px solid var(--text);
+  }
+  .works-gallery {
+    padding: 20px 16px;
+  }
+}
   </style>
 </head>
 <body style="cursor:none;">
