@@ -649,6 +649,34 @@
   }
   }
 
+  #hero-bounce-gallery {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 2;
+}
+.bounce-thumb {
+  position: absolute;
+  border-radius: 5px;
+  overflow: hidden;
+  pointer-events: all;
+  cursor: pointer;
+  box-shadow: none;
+  transition: none;
+}
+.bounce-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  pointer-events: none;
+}
+.bounce-thumb.frozen {
+  box-shadow: none;
+  z-index: 10;
+}
+
   </style>
 </head>
 <body style="cursor:none;">
@@ -664,6 +692,7 @@
 <!-- Hero Landing -->
 <div id="hero-landing">
   <img id="hero-img" src="background.jpg" alt="Landing" />
+  <div id="hero-bounce-gallery"></div>
   <div id="hero-scroll-hint">
     <div class="scroll-line"></div>
     <span>Scroll</span>
@@ -1324,7 +1353,7 @@ document.querySelectorAll('.works-tab').forEach(btn =>
     ]},
   ]
   },
-   '셀트리온': {
+     '셀트리온': {
   title: '<잡학다셀><br>ADC 기술이란?',
   category: 'youtube',
   year: 'Jan, 2025',
@@ -1334,9 +1363,21 @@ document.querySelectorAll('.works-tab').forEach(btn =>
     { layout: 'full', items: [
       { src: 'https://www.youtube.com/embed/wWQgcIRzWAM', type: 'youtube' }
     ]},
+    { layout: 'full', items: [
+      { src: 'works/youtube/detail/셀트리온/1.gif' }
+    ]},
+    { layout: 'full', items: [
+      { src: 'works/youtube/detail/셀트리온/2.png' }
+    ]},
+    { layout: 'full', items: [
+      { src: 'works/youtube/detail/셀트리온/3.gif' }
+    ]},
+    { layout: 'full', items: [
+      { src: 'works/youtube/detail/셀트리온/4.gif' }
+    ]},
   ]
-  },
-  '화제의대상': {
+},
+ '화제의대상': {
   title: '청정원 어린이집',
   category: 'youtube',
   year: 'May, 2025',
@@ -1346,9 +1387,32 @@ document.querySelectorAll('.works-tab').forEach(btn =>
     { layout: 'full', items: [
       { src: 'https://www.youtube.com/embed/kZ9HEl9d_TI', type: 'youtube' }
     ]},
+    { layout: 'full', items: [
+      { src: 'works/youtube/detail/화제의대상/Intro.gif' }
+    ]},
+    { layout: 'full', items: [
+      { src: 'works/youtube/detail/화제의대상/logo design.png' }
+    ]},
+    { layout: 'half', items: [
+      { src: 'works/youtube/detail/화제의대상/1.png' },
+      { src: 'works/youtube/detail/화제의대상/2.png' }
+    ]},
+    { layout: 'half', items: [
+      { src: 'works/youtube/detail/화제의대상/3.png' },
+      { src: 'works/youtube/detail/화제의대상/4.png' }
+    ]},
+    { layout: 'full', items: [
+      { src: 'works/youtube/detail/화제의대상/5.png' }
+    ]},
+    { layout: 'full', items: [
+      { src: 'works/youtube/detail/화제의대상/6.png' }
+    ]},
+    { layout: 'full', items: [
+      { src: 'works/youtube/detail/화제의대상/Outro.gif' }
+    ]},
   ]
-  },
-  '칭찬익스프레스': {
+},
+ '칭찬익스프레스': {
   title: '화재익스프레스<br>칭찬특송',
   category: 'youtube',
   year: 'Oct, 2025',
@@ -1358,9 +1422,26 @@ document.querySelectorAll('.works-tab').forEach(btn =>
     { layout: 'full', items: [
       { src: 'https://www.youtube.com/embed/nUANo7r8LgE', type: 'youtube' }
     ]},
+    { layout: 'full', items: [
+      { src: 'works/youtube/detail/칭찬익스프레스/logo.png' }
+    ]},
+    { layout: 'half', items: [
+      { src: 'works/youtube/detail/칭찬익스프레스/1.png' },
+      { src: 'works/youtube/detail/칭찬익스프레스/2.png' }
+    ]},
+    { layout: 'half', items: [
+      { src: 'works/youtube/detail/칭찬익스프레스/3.png' },
+      { src: 'works/youtube/detail/칭찬익스프레스/4.png' }
+    ]},
+    { layout: 'full', items: [
+      { src: 'works/youtube/detail/칭찬익스프레스/5.png' }
+    ]},
+    { layout: 'full', items: [
+      { src: 'works/youtube/detail/칭찬익스프레스/6.png' }
+    ]},
   ]
-  },
-  '성공서재': {
+},
+'성공서재': {
   title: '귀마지 소통법',
   category: 'youtube',
   year: 'June, 2026',
@@ -1370,9 +1451,33 @@ document.querySelectorAll('.works-tab').forEach(btn =>
     { layout: 'full', items: [
       { src: 'https://www.youtube.com/embed/SkfJn0XpJE4', type: 'youtube' }
     ]},
+    { layout: 'full', items: [
+      { src: 'works/youtube/detail/성공서재/title.mp4', type: 'video' }
+    ]},
+    { layout: 'full', items: [
+      { src: 'works/youtube/detail/성공서재/1.png' }
+    ]},
+    { layout: 'full', items: [
+      { src: 'works/youtube/detail/성공서재/2.png' }
+    ]},
+    { layout: 'full', items: [
+      { src: 'works/youtube/detail/성공서재/3.png' }
+    ]},
+    { layout: 'full', items: [
+      { src: 'works/youtube/detail/성공서재/4.png' }
+    ]},
+    { layout: 'full', items: [
+      { src: 'works/youtube/detail/성공서재/5.png' }
+    ]},
+    { layout: 'full', items: [
+      { src: 'works/youtube/detail/성공서재/6.png' }
+    ]},
+    { layout: 'full', items: [
+      { src: 'works/youtube/detail/성공서재/7.png' }
+    ]},
   ]
-  },
-  'GA매니저': {
+},
+'GA매니저': {
   title: 'GA매니저 페스타',
   category: 'youtube',
   year: 'Sept, 2025',
@@ -1382,8 +1487,25 @@ document.querySelectorAll('.works-tab').forEach(btn =>
     { layout: 'full', items: [
       { src: 'https://www.youtube.com/embed/HYkR6MV4Qec', type: 'youtube' }
     ]},
+    { layout: 'half', items: [
+      { src: 'works/youtube/detail/GA매니저/1.png' },
+      { src: 'works/youtube/detail/GA매니저/2.png' }
+    ]},
+    { layout: 'half', items: [
+      { src: 'works/youtube/detail/GA매니저/3.png' },
+      { src: 'works/youtube/detail/GA매니저/4.png' }
+    ]},
+    { layout: 'full', items: [
+      { src: 'works/youtube/detail/GA매니저/5.png' }
+    ]},
+    { layout: 'full', items: [
+      { src: 'works/youtube/detail/GA매니저/6.png' }
+    ]},
+    { layout: 'full', items: [
+      { src: 'works/youtube/detail/GA매니저/GA title.mp4', type: 'video' }
+    ]},
   ]
-  },
+},
   'CES': {
   title: 'CES 2025',
   category: 'youtube',
@@ -1430,7 +1552,7 @@ document.querySelectorAll('.works-tab').forEach(btn =>
         media.src = item.src;
         media.loop = true;
         media.playsInline = true;
-        if (key === 'artemis' || key === 'mascara' || key === 'aurelia' || key === 'magicweapon') {
+        if (key === 'artemis' || key === 'mascara' || key === 'aurelia' || key === 'magicweapon' || key === 'GA매니저' || key === '성공서재') {
           media.controls = false;
           media.muted = true;
           media.autoplay = true;
@@ -1656,6 +1778,116 @@ document.getElementById('detail-back-desktop').addEventListener('click', closeDe
     });
     document.addEventListener('mouseup', startFloat);
   });
+
+  (function() {
+const pool = [
+  { src: 'works/ai/01.png',        w: 200, h: 280 },
+  { src: 'works/ai/05.png',        w: 160, h: 160 },
+  { src: 'works/ai/03.png',        w: 240, h: 165 },
+  { src: 'works/ai/02.png',        w: 200, h: 280 },
+  { src: 'works/ai/04.png',        w: 180, h: 220 },
+  { src: 'works/animation/a1.gif', w: 265, h: 195 },
+  { src: 'works/animation/a2.gif', w: 265, h: 195 },
+ { src: 'works/animation/a3.gif',  w: 160, h: 160 },
+  { src: 'works/animation/a5.gif', w: 160, h: 160 },
+  { src: 'works/tvcf/tv7.png',     w: 240, h: 150 },
+  { src: 'works/tvcf/tv10.png',    w: 195, h: 205 },
+  { src: 'works/tvcf/tv1.png',     w: 265, h: 195 },
+  { src: 'works/tvcf/tv8.png',     w: 180, h: 135 },
+  { src: 'works/tvcf/tv6.jpg',     w: 220, h: 175 },
+ { src: 'works/youtube/yt1.png',   w: 195, h: 125 },
+  { src: 'works/youtube/yt3.png',  w: 205, h: 160 },
+  { src: 'works/youtube/yt4.png',  w: 215, h: 145 },
+  { src: 'works/youtube/yt5.png',  w: 200, h: 150 },
+];
+
+  function shuffle(arr) {
+    return arr.slice().sort(() => Math.random() - 0.5);
+  }
+
+  const selected = shuffle(pool).slice(0, 12);
+  const container = document.getElementById('hero-bounce-gallery');
+
+  const balls = selected.map((item) => {
+    const el = document.createElement('div');
+    el.className = 'bounce-thumb';
+    el.style.width = item.w + 'px';
+    el.style.height = item.h + 'px';
+    const img = document.createElement('img');
+    img.src = item.src;
+    el.appendChild(img);
+    container.appendChild(el);
+
+    const cw = container.offsetWidth || window.innerWidth;
+    const ch = container.offsetHeight || window.innerHeight;
+    const angle = Math.random() * Math.PI * 2;
+    const speed = 1.2 + Math.random() * 1.0;
+
+    const ball = {
+      el,
+      x: Math.random() * (cw - item.w),
+      y: Math.random() * (ch - item.h),
+      vx: Math.cos(angle) * speed,
+      vy: Math.sin(angle) * speed,
+      w: item.w,
+      h: item.h,
+      frozen: false,
+    };
+
+    el.addEventListener('mouseenter', () => {
+      ball.frozen = true;
+      el.classList.add('frozen');
+      el.style.transform = 'scale(1.1)';
+    });
+    el.addEventListener('mouseleave', () => {
+      ball.frozen = false;
+      el.classList.remove('frozen');
+      el.style.transform = 'scale(1)';
+      const a = Math.random() * Math.PI * 2;
+      const s = 1.2 + Math.random() * 1.0;
+      ball.vx = Math.cos(a) * s;
+      ball.vy = Math.sin(a) * s;
+    });
+
+    return ball;
+  });
+
+  function tick() {
+    const cw = container.offsetWidth;
+    const ch = container.offsetHeight;
+    balls.forEach(b => {
+      if (b.frozen) return;
+      b.x += b.vx;
+      b.y += b.vy;
+      if (b.x <= 0) {
+        b.x = 0;
+        b.vx = Math.abs(b.vx);
+        b.vy += (Math.random() - 0.5) * 0.4;
+      }
+      if (b.x + b.w >= cw) {
+        b.x = cw - b.w;
+        b.vx = -Math.abs(b.vx);
+        b.vy += (Math.random() - 0.5) * 0.4;
+      }
+      if (b.y <= 0) {
+        b.y = 0;
+        b.vy = Math.abs(b.vy);
+        b.vx += (Math.random() - 0.5) * 0.4;
+      }
+      if (b.y + b.h >= ch) {
+        b.y = ch - b.h;
+        b.vy = -Math.abs(b.vy);
+        b.vx += (Math.random() - 0.5) * 0.4;
+      }
+      b.vx = Math.max(-2.8, Math.min(2.8, b.vx));
+      b.vy = Math.max(-2.8, Math.min(2.8, b.vy));
+      b.el.style.left = b.x + 'px';
+      b.el.style.top = b.y + 'px';
+    });
+    requestAnimationFrame(tick);
+  }
+  tick();
+})();
 </script>
 </body>
 </html>
